@@ -6,7 +6,7 @@ import {
 const Header = () => (
   <Navbar bg="black" variant="dark">
     <Container className="flex-lg-row flex-column">
-      <Col lg="3" className="text-center mb-5 mt-4 my-lg-3">
+      <Col lg="3" className="mb-5 mt-4 my-lg-3">
         <Navbar.Brand className="fs-2 mx-auto" href="#home">
           <span className="fw-bold">team</span>
           lab
