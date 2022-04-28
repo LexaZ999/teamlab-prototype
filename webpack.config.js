@@ -1,9 +1,11 @@
 const path = require('path');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
   mode: 'development',
+  // plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
       {
@@ -15,6 +17,15 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+      // CSS, PostCSS, Sass
+      {
+        test: /\.(scss|css)$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: 'asset/inline',
       },
     ],
   },
