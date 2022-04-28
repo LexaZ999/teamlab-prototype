@@ -1,12 +1,9 @@
 import React from 'react';
-import './App.css';
+// import { Button } from 'react-bootstrap';
+import Header from './components/Header.jsx';
 
 const App = () => (
-  <div className="App">
-    <h1> Hello, World! </h1>
-    <p>jdfjsdffjksdrrjfks</p>
-    <h2>qQWEr</h2>
-  </div>
+  <Header />
 );
 
 export default App;
