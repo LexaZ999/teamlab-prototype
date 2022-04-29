@@ -17,7 +17,7 @@ const SubscribeBlock = () => {
           рассказываем о вакансиях и наших мероприятиях.
         </p>
         <div className="w-100 my-3" style={divStyle} />
-        <Button variant="success" className="fw-bold text-uppercase py-3 px-5">
+        <Button variant="purple" className="fw-bold text-uppercase py-3 px-5">
           подписаться на чат-бота
         </Button>
       </Container>

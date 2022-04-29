@@ -14,13 +14,13 @@ const Header = () => (
       </Col>
       <Col className="text-center">
         <Nav className="me-auto text-uppercase flex-lg-row flex-column">
-          <Nav.Link className="text-white" href="#">
+          <Nav.Link className="" href="#">
             Мой профиль
           </Nav.Link>
-          <Nav.Link className="text-warning fw-bold" href="#">
+          <Nav.Link className="active" href="#">
             Стажировки
           </Nav.Link>
-          <Nav.Link className="text-white" href="#">
+          <Nav.Link className="" href="#">
             Акселерационные программы
           </Nav.Link>
         </Nav>

@@ -13,7 +13,7 @@ const InfoCard = (props) => {
         <Card.Text>
           {description}
         </Card.Text>
-        <Button variant="outline-dark fw-bold text-uppercase fs-7">Подробнее</Button>
+        <Button variant="outline-dark" className="btn-rounded fw-bold text-uppercase fs-7 py-3 px-5">Подробнее</Button>
       </Card.Body>
     </Card>
   );
