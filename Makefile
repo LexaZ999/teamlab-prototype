@@ -15,6 +15,9 @@ install-deps:
 build:
 	npm run build
 
+build-prod:
+	npm run build-prod
+
 lint:
 	npx eslint . --ext js,jsx
 

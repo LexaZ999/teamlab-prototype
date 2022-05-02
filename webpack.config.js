@@ -1,10 +1,38 @@
 const path = require('path');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const webpack = require('webpack');
 
+let mode = 'development'; // По умолчанию режим development
+if (process.env.NODE_ENV === 'production') {
+  // Режим production,если
+  // при запуске вебпака было указано --mode=production
+  mode = 'production';
+}
+
+const plugins = [
+  new HtmlWebpackPlugin({
+    template: './public/index.html', // Данный html будет использован как шаблон
+  }),
+  new MiniCssExtractPlugin({
+    filename: '[name].[contenthash].css', // Формат имени файла
+  }),
+];
+
 module.exports = {
+  mode,
+  plugins,
   entry: './src/index.js',
-  mode: 'development',
+  devtool: 'source-map',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    // publicPath: '/dist/',
+    // filename: 'bundle.js',
+    assetModuleFilename: 'assets/[hash][ext][query]', // Все ассеты будут
+    // складываться в dist/assets
+    clean: true,
+  },
+
   // plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
@@ -14,27 +42,47 @@ module.exports = {
         loader: 'babel-loader',
         options: { presets: ['@babel/env'] },
       },
+      // {
+      //   test: /\.css$/,
+      //   use: ['style-loader', 'css-loader'],
+      // },
+      // // CSS, PostCSS, Sass
+      // {
+      //   test: /\.(scss|css)$/,
+      //   use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+      // },
+      // {
+      //   test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+      //   type: 'asset/inline',
+      // },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.(html)$/,
+        use: ['html-loader'],
       },
-      // CSS, PostCSS, Sass
       {
-        test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        test: /\.(s[ac]|c)ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
       {
-        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: 'asset/inline',
+        test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
+        type: mode === 'production' ? 'asset' : 'asset/resource',
+        // В продакшен режиме
+        // изображения размером до 8кб будут инлайнится в код
+        // В режиме разработки все изображения будут помещаться
+        // в dist/assets
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)$/i,
+        type: 'asset/resource',
       },
     ],
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
-  output: {
-    path: path.resolve(__dirname, 'dist/'),
-    publicPath: '/dist/',
-    filename: 'bundle.js',
-  },
   devServer: {
     static: {
       directory: path.join(__dirname, 'public/'),
@@ -43,6 +91,6 @@ module.exports = {
     devMiddleware: {
       publicPath: 'https://localhost:3000/dist/',
     },
-    hot: 'only',
+    hot: true,
   },
 };
