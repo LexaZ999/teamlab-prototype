@@ -1,5 +1,7 @@
 import React from 'react';
 import { Routes, Route, HashRouter } from 'react-router-dom';
+import Feedback from './components/Feedback.jsx';
+import Footer from './components/Footer.jsx';
 import Header from './components/Header.jsx';
 import AccelerationPrograms from './pages/AccelerationPrograms.jsx';
 import Internships from './pages/Internships.jsx';
@@ -17,6 +19,8 @@ const App = () => (
       <Route path="acceleration-programs" element={<AccelerationPrograms />} />
       <Route path="testing" element={<Testing />} />
     </Routes>
+    <Feedback />
+    <Footer />
   </HashRouter>
 );
 
