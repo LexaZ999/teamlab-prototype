@@ -75,10 +75,17 @@ module.exports = {
         // изображения размером до 8кб будут инлайнится в код
         // В режиме разработки все изображения будут помещаться
         // в dist/assets
+        generator: {
+          filename: './asset/images/[name][ext]',
+        },
       },
       {
         test: /\.(woff2?|eot|ttf|otf)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: './asset/fonts/[name][ext]',
+        },
+
       },
     ],
   },
