@@ -5,7 +5,7 @@ import {
 import { LinkContainer } from 'react-router-bootstrap';
 
 const Header = () => (
-  <Navbar bg="black" variant="dark">
+  <Navbar bg="black" variant="dark" className="navbar-position">
     <Container className="flex-lg-row flex-column">
       <Col lg="3" className="mb-5 mt-4 my-lg-3">
         <Navbar.Brand className="fs-2 mx-auto" href="https://teamlab.pro/">
