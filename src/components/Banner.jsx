@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import bannerSvg from '../images/banner.svg';
 
 const Banner = () => (
   <Container className="mb-5">
@@ -8,7 +9,7 @@ const Banner = () => (
         <h1 className="fw-bold letter-spacing-3 text-nowrap text-center text-lg-start">Построй карьеру в IT!</h1>
       </Col>
       <Col>
-        <img src="/src/images/banner.svg" className="img-fluid" alt="banner" />
+        <img src={bannerSvg} className="img-fluid" alt="banner" />
       </Col>
     </Row>
   </Container>

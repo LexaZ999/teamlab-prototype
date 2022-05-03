@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import InfoCard from './InfoCard.jsx';
+import images1 from '../images/home-3.svg';
 
 const InternshipCards = () => (
   <div className="bg-light">
@@ -11,28 +12,28 @@ const InternshipCards = () => (
         <Col>
           <InfoCard
             title="TeamLab"
-            src="/src/images/home-3.svg"
+            src={images1}
             description="Формат: онлайн"
           />
         </Col>
         <Col>
           <InfoCard
             title="UserStory"
-            src="/src/images/home-3.svg"
+            src={images1}
             description="Формат: онлайн"
           />
         </Col>
         <Col>
           <InfoCard
             title="Aurigma"
-            src="/src/images/home-3.svg"
+            src={images1}
             description="Формат: онлайн"
           />
         </Col>
         <Col>
           <InfoCard
             title="Инком"
-            src="/src/images/home-3.svg"
+            src={images1}
             description="Формат: онлайн"
           />
         </Col>
