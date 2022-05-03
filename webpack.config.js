@@ -82,15 +82,20 @@ module.exports = {
       },
     ],
   },
-  resolve: { extensions: ['*', '.js', '.jsx'] },
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+    // alias: {
+    //   images: path.resolve(__dirname, 'src/images/'),
+    // },
+  },
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'public/'),
-    },
-    port: 3000,
-    devMiddleware: {
-      publicPath: 'https://localhost:3000/dist/',
-    },
+    // static: {
+    //   directory: path.join(__dirname, 'dist/'),
+    // },
+    // port: 3000,
+    // devMiddleware: {
+    //   publicPath: 'https://localhost:3000/dist/',
+    // },
     hot: true,
   },
 };
