@@ -1,7 +1,14 @@
 import React from 'react';
+import Banner from '../components/Banner.jsx';
+import InternshipCards from '../components/InternshipCards.jsx';
+import SubscribeBlock from '../components/SubscribeBlock.jsx';
 
 const Internships = () => (
-  <h1>Internships</h1>
+  <>
+    <Banner />
+    <InternshipCards />
+    <SubscribeBlock />
+  </>
 );
 
 export default Internships;
