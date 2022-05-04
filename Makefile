@@ -14,6 +14,7 @@ lint:
 	npx eslint . --ext js,jsx
 
 deploy:
+	npm run build-prod
 	npm run deploy
 
 watch:

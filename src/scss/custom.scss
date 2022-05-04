@@ -2,7 +2,8 @@
 @import "bootstrap/scss/variables";
 
 $custom-colors: (
-  'purple': #bd2381
+  'purple': #bd2381,
+  'black': $black
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
